@@ -1,0 +1,118 @@
+.bgVideo {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.backgroundImage {
+  background: url(../../assets/backgrounImage.png) no-repeat fixed;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position-x: right;
+  background-size: contain;
+  background-color: #161324;
+}
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #1c152e;
+  opacity: 0.8;
+  -webkit-transition: all 0.5s 0s ease;
+  -moz-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+  transition: all 0.5s 0s ease;
+}
+
+.textContainer {
+  flex-basis: 70%;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  margin-top: -5px;
+  left: 10%;
+  top: 200px;
+  width: 50%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 6rem;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 0 80px rgb(192 219 255 / 48%), 0 0 32px rgb(65 120 255 / 24%);
+  pointer-events: none;
+  margin-bottom: 3rem;
+  margin-top: 0rem;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0px;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1rem;
+  width: 70%;
+}
+
+.buttonWrapper {
+  display: flex;
+  position: relative;
+}
+
+.primaryButton {
+  padding: 15px 25px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  background: transparent;
+  font-family: EuclidCircular, Arial;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: 0.4px;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  width: fit-content;
+  transform: translateZ(0);
+  will-change: box-shadow, background, padding;
+  position: relative;
+  pointer-events: all;
+  opacity: 1;
+}
+
+.buttonBg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(111, 76, 255, 0.8);
+}
+
+.primaryButton:hover {
+  box-shadow: 0 0 32px 0 rgb(88 47 213 / 32%), 0 0 8px 0 rgb(88 47 213 / 48%);
+}
+
+.primaryButton:hover .buttonBg {
+  background-color: rgba(111, 76, 255, 1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}

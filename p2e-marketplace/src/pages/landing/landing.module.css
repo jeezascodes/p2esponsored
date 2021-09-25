@@ -1,13 +1,30 @@
+.mainWrapper {
+  background-color: #161325;
+}
+.heroContainer {
+  height: 100vh;
+}
+
 .bgVideo {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: -1;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgb(22 19 37));
+  /* z-index: -1; */
+}
+
+.leftVideo {
+  width: 100%;
+  mask-image: radial-gradient(
+    ellipse 55% 76% at 38% 61%,
+    black 24%,
+    transparent 69%
+  );
 }
 
 .backgroundImage {
@@ -33,11 +50,12 @@
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
   transition: all 0.5s 0s ease;
+  z-index: 2;
 }
 
 .textContainer {
   flex-basis: 70%;
-  position: relative;
+  position: absolute;
   z-index: 10;
   pointer-events: none;
   margin-top: -5px;
@@ -58,6 +76,18 @@
   margin-top: 0rem;
 }
 
+.titleH2 {
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 0 80px rgb(192 219 255 / 48%), 0 0 32px rgb(65 120 255 / 24%);
+  pointer-events: none;
+  margin-bottom: 3rem;
+  margin-top: 0rem;
+}
+
 .description {
   font-size: 20px;
   line-height: 28px;
@@ -67,52 +97,72 @@
   width: 70%;
 }
 
+.text2 {
+  font-size: 17px;
+}
+
 .buttonWrapper {
   display: flex;
   position: relative;
 }
 
-.primaryButton {
-  padding: 15px 25px;
-  border: none;
-  color: white;
-  border-radius: 4px;
-  background: transparent;
-  font-family: EuclidCircular, Arial;
-  font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1rem;
-  letter-spacing: 0.4px;
-  -webkit-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  width: fit-content;
-  transform: translateZ(0);
-  will-change: box-shadow, background, padding;
+.section {
+  max-width: 1320px;
+  padding: 0 20px;
+  margin: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.sectionContent {
+  margin: 0;
+  box-sizing: border-box;
+  min-width: 0;
+  display: flex;
+}
+
+.leftPane {
+  width: 55%;
   position: relative;
-  pointer-events: all;
-  opacity: 1;
+  mask-image: linear-gradient(
+    0deg,
+    rgba(22, 19, 37, 0) 0%,
+    rgba(22, 19, 37, 1) 39%
+  );
 }
 
-.buttonBg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  top: 0px;
-  left: 0px;
-  border-radius: 4px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: rgba(111, 76, 255, 0.8);
+.rightPane {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: flex;
+  width: 45%;
+  padding-left: 10%;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
-.primaryButton:hover {
-  box-shadow: 0 0 32px 0 rgb(88 47 213 / 32%), 0 0 8px 0 rgb(88 47 213 / 48%);
+.rightPaneInv {
+  width: 55%;
+  position: relative;
+  mask-image: linear-gradient(
+    0deg,
+    rgba(22, 19, 37, 0) 0%,
+    rgba(22, 19, 37, 1) 39%
+  );
 }
 
-.primaryButton:hover .buttonBg {
-  background-color: rgba(111, 76, 255, 1);
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
+.leftPaneInv {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: flex;
+  width: 45%;
+  padding-right: 10%;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
 }

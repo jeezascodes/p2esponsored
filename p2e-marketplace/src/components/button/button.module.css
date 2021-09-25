@@ -1,0 +1,44 @@
+.primaryButton {
+  padding: 15px 25px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  background: transparent;
+  font-family: EuclidCircular, Arial;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: 0.4px;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  width: fit-content;
+  transform: translateZ(0);
+  will-change: box-shadow, background, padding;
+  position: relative;
+  pointer-events: all;
+  opacity: 1;
+}
+
+.buttonBg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(111, 76, 255, 0.8);
+}
+
+.primaryButton:hover {
+  box-shadow: 0 0 32px 0 rgb(88 47 213 / 32%), 0 0 8px 0 rgb(88 47 213 / 48%);
+}
+
+.primaryButton:hover .buttonBg {
+  background-color: rgba(111, 76, 255, 1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}

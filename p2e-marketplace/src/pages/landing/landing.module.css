@@ -27,6 +27,15 @@
   );
 }
 
+.rightVideo {
+  width: 100%;
+  mask-image: radial-gradient(
+    ellipse 55% 76% at 58% 61%,
+    black 24%,
+    transparent 69%
+  );
+}
+
 .backgroundImage {
   background: url(../../assets/backgrounImage.png) no-repeat fixed;
   width: 100%;

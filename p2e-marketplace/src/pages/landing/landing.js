@@ -61,7 +61,7 @@ export default function Landing() {
             </p>
           </div>
           <div className={styles.rightPaneInv}>
-            <video className={styles.leftVideo} autoPlay loop muted>
+            <video className={styles.rightVideo} autoPlay loop muted>
               <source src={rightVideo} type='video/mp4' />
             </video>
           </div>

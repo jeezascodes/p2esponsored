@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 32px;
+  height: 100px;
+  position: absolute;
+  color: white;
+  width: 100%;
+}
+
+.navbarWrapper {
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbarLink {
+  margin-left: 20px;
+  font-family: EuclidCircular, Arial;
+  font-weight: 400;
+  cursor: pointer;
+}

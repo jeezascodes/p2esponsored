@@ -9,7 +9,10 @@ export default function OfferItemList({
 }) {
   return (
     <div>
-      <Link to='/offer/1' className={styles.offerItem}>
+      <Link
+        to={{ pathname: '/offer/1', state: item }}
+        className={styles.offerItem}
+      >
         <div className={styles.itemContent}>
           <div className={styles.row}>
             <div className={styles.thumbnailContainer}>

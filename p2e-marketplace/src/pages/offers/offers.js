@@ -28,7 +28,7 @@ export default function Offers() {
     {
       username: 'jeezascodes - 0x6F5...c622',
       offer_id: 3,
-      game: 'Plat vs undead',
+      game: 'Plant vs undead',
       description: 'Scholarship duration: undefined',
       updated_at: '2021-7-21',
       thumbnail:

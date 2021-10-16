@@ -113,6 +113,8 @@
 .buttonWrapper {
   display: flex;
   position: relative;
+  justify-content: space-between;
+  max-width: 27rem;
 }
 
 .section {

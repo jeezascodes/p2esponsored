@@ -1,0 +1,78 @@
+.offerItem {
+  animation: 0.5s ease 0.05s 1 normal both running fadeInUp;
+  margin-top: 32px;
+  margin-bottom: 0px;
+}
+
+.itemContent {
+  box-sizing: border-box;
+  margin: 0px;
+  min-width: 0px;
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease 0s;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: unset;
+  background: rgba(255, 255, 255, 0.04);
+  position: relative;
+}
+
+.row {
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start;
+}
+
+.thumbnailContainer {
+  display: flex;
+  align-items: center;
+  flex: 2 1 0%;
+  position: relative;
+}
+
+.thumbnail {
+  padding: 16px;
+  object-fit: cover;
+  border-radius: 19px;
+  overflow: hidden;
+  width: 189px;
+  height: 189px;
+}
+
+.thumbnailBg {
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  background-size: 250%;
+  background-position: center center;
+  filter: blur(60px);
+  z-index: -1;
+  display: block;
+  opacity: 0.4;
+}
+
+.middle {
+  box-sizing: border-box;
+  margin: 0px;
+  min-width: 0px;
+  position: absolute;
+  left: 200px;
+  padding-top: 24px;
+  padding-left: 1rem;
+  display: flex;
+  flex: 3 1 0%;
+}
+
+.right {
+  box-sizing: border-box;
+  margin: 0px;
+  min-width: 0px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  padding-left: 1rem;
+  flex: 3 1 0%;
+}

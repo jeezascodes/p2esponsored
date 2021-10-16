@@ -30,6 +30,7 @@ export default function Landing() {
         <div className='css-1shgmgj'>
           <div className={styles.buttonWrapper}>
             <PrimaryButton />
+            <PrimaryButton title='Offer a Scholarship' />
           </div>
         </div>
       </div>

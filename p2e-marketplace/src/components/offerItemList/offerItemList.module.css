@@ -38,6 +38,7 @@
   overflow: hidden;
   width: 159px;
   height: 159px;
+  transition: all 0.3s ease 0s;
 }
 
 .thumbnailBg {
@@ -143,9 +144,13 @@
 }
 
 .infoText {
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 1.2px;
   line-height: 12px;
   color: white;
+}
+
+.itemContent:hover {
+  transform: scale(1.01);
 }

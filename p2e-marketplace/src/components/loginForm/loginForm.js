@@ -4,11 +4,13 @@ import TextInput from '../../components/textInput/textInput';
 import PrimaryButton from '../../components/button/button';
 import { loginUser } from '../../data/apiCalls';
 import { useHistory } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 export default function LoginForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
   const onValueChange = (event, id) => {
@@ -18,6 +20,7 @@ export default function LoginForm() {
   };
 
   const onSubmit = async () => {
+    setIsLoading(true);
     const data = {
       username: name,
       email,
@@ -25,9 +28,10 @@ export default function LoginForm() {
     };
     try {
       const response = await loginUser(data);
-      console.log(`response`, response);
+      setIsLoading(false);
       history.push('/offers');
     } catch (err) {
+      setIsLoading(false);
       console.log(`err`, err);
     }
   };
@@ -54,7 +58,11 @@ export default function LoginForm() {
         onChange={onValueChange}
         type='password'
       />
-      <PrimaryButton title='Sign in' onClick={onSubmit} />
+      {isLoading ? (
+        <Loader type='Puff' color='#00BFFF' height={50} width={50} />
+      ) : (
+        <PrimaryButton title='Sign in' onClick={onSubmit} />
+      )}
     </div>
   );
 }

@@ -154,3 +154,9 @@
 .itemContent:hover {
   transform: scale(1.01);
 }
+
+.applyContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}

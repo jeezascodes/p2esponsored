@@ -4,12 +4,14 @@ import TextInput from '../../components/textInput/textInput';
 import PrimaryButton from '../../components/button/button';
 import { registerUser } from '../../data/apiCalls';
 import { useHistory } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 export default function SignupForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
   const onValueChange = (event, id) => {
@@ -20,6 +22,7 @@ export default function SignupForm() {
   };
 
   const onSubmit = async () => {
+    setIsLoading(true);
     const data = {
       username: name,
       email,
@@ -28,8 +31,10 @@ export default function SignupForm() {
     };
     try {
       const response = await registerUser(data);
+      setIsLoading(false);
       history.push('/offers');
     } catch (err) {
+      setIsLoading(false);
       console.log(`err`, err);
     }
   };
@@ -63,7 +68,11 @@ export default function SignupForm() {
         onChange={onValueChange}
         type='password'
       />
-      <PrimaryButton title='Sign up' onClick={onSubmit} />
+      {isLoading ? (
+        <Loader type='Puff' color='#00BFFF' height={50} width={50} />
+      ) : (
+        <PrimaryButton title='Sign up' onClick={onSubmit} />
+      )}
     </div>
   );
 }

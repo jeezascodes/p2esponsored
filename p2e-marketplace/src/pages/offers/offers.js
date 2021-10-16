@@ -4,8 +4,11 @@ import styles from './offers.module.css';
 import MainView from '../../components/mainView/mainView';
 import Heading from '../../components/heading/heading';
 import PrimaryButton from '../../components/button/button';
+import { useHistory } from 'react-router-dom';
 
 export default function Offers() {
+  const history = useHistory();
+
   const offers = [
     {
       username: 'jeezascodes - 0x6F5...c622',
@@ -41,7 +44,10 @@ export default function Offers() {
         <div className={styles.header}>
           <Heading text='Scholarships' herarchy='h3' />
           <div>
-            <PrimaryButton title='Offer a Scholarship' onClick={() => {}} />
+            <PrimaryButton
+              title='Offer a Scholarship'
+              onClick={() => history.push('/create')}
+            />
           </div>
         </div>
 

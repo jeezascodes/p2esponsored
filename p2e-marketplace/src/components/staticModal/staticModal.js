@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './staticModal.module.css';
 import TextInput from '../../components/textInput/textInput';
+import PrimaryButton from '../../components/button/button';
 
 export default function StaticModal() {
   const [name, setName] = useState('');
@@ -13,6 +14,10 @@ export default function StaticModal() {
     if (id === 'email') setEmail(event.target.value);
     if (id === 'password') setPassword(event.target.value);
     if (id === 'confirm') setConfirmPassword(event.target.value);
+  };
+
+  const onSubmit = () => {
+    console.log('submit');
   };
   return (
     <div className={styles.modalContainer}>
@@ -28,6 +33,7 @@ export default function StaticModal() {
           id='email'
           value={email}
           onChange={onValueChange}
+          type='email'
         />
         <TextInput
           placeholder='password'
@@ -43,6 +49,7 @@ export default function StaticModal() {
           onChange={onValueChange}
           type='password'
         />
+        <PrimaryButton title='Sign up' onClick={onSubmit} />
       </div>
     </div>
   );

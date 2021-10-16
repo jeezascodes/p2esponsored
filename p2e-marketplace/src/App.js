@@ -1,11 +1,23 @@
 import './App.css';
 import Landing from './pages/landing/landing';
+import Register from './pages/register/register';
+import Navbar from './components/navbar/navbar';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'></header>
-      <Landing />
+      <Navbar />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/'>
+            <Landing />
+          </Route>
+          <Route path='/register'>
+            <Register />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
+import styles from './mainView.module.css';
 
-export default function mainView() {
-  return <div>hola</div>;
+export default function MainView({ children }) {
+  return <div className={styles.wrapper}>{children}</div>;
 }

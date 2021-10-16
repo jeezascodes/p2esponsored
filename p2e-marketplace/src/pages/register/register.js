@@ -1,13 +1,17 @@
 import React from 'react';
-import Navbar from '../../components/navbar/navbar';
+import StaticModal from '../../components/staticModal/staticModal';
 import styles from './register.module.css';
 import PrimaryButton from '../../components/button/button';
-import mainView from '../../components/mainView/mainView';
+import MainView from '../../components/mainView/mainView';
 
-export default function register() {
+export default function Register() {
   return (
     <div>
-      <mainView />
+      <MainView>
+        <div className={styles.modalContainer}>
+          <StaticModal />
+        </div>
+      </MainView>
     </div>
   );
 }

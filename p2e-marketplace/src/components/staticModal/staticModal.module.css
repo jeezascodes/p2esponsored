@@ -1,0 +1,11 @@
+.modalContainer {
+  width: 840px;
+  height: inherit;
+  overflow-y: auto;
+  background: rgb(12, 10, 29);
+  box-shadow: rgb(0 0 0 / 14%) 0px 0px 16px, rgb(0 0 0 / 14%) 0px 0px 64px,
+    rgb(0 0 0 / 32%) 0px 0px 128px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}

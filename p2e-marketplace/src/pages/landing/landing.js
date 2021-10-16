@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/navbar/navbar';
+
 import styles from './landing.module.css';
 import backgrounVideo from '../../assets/backgroundVideo.mp4';
 import leftVideo from '../../assets/astronaut_user.mp4';
@@ -9,7 +9,6 @@ import PrimaryButton from '../../components/button/button';
 export default function Landing() {
   return (
     <div className={styles.mainWrapper}>
-      <Navbar />
       <div className={styles.heroContainer}>
         {/* <div className={styles.overlay}></div> */}
         <video className={styles.bgVideo} autoPlay loop muted>

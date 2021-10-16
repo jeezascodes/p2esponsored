@@ -1,16 +1,16 @@
 import React from 'react';
 import StaticModal from '../../components/staticModal/staticModal';
-import styles from './register.module.css';
+import styles from './login.module.css';
 import MainView from '../../components/mainView/mainView';
-import SignupForm from '../../components/signupForm/signupForm';
+import LoginForm from '../../components/loginForm/loginForm';
 
-export default function Register() {
+export default function Login() {
   return (
     <div>
       <MainView>
         <div className={styles.modalContainer}>
           <StaticModal>
-            <SignupForm />
+            <LoginForm />
           </StaticModal>
         </div>
       </MainView>

@@ -7,3 +7,10 @@ export const registerUser = (data) => {
     body: data,
   });
 };
+
+export const loginUser = (data) => {
+  return fetch(urls.login, {
+    method: 'POST',
+    body: data,
+  });
+};

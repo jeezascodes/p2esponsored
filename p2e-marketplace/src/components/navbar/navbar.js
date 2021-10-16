@@ -19,7 +19,7 @@ export default function Navbar() {
             <Link to='/register' className={styles.navbarLink}>
               Sign up
             </Link>
-            <Link to='' className={styles.navbarLink}>
+            <Link to='/signin' className={styles.navbarLink}>
               Sign in
             </Link>
           </nav>

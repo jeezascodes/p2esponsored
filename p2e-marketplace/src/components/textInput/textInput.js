@@ -11,7 +11,7 @@ export default function TextInput({
 }) {
   return (
     <label className={styles.label}>
-      {name && `${name}:`}
+      <span className={styles.labelText}>{name && `${name}:`}</span>
       <input
         className={styles.input}
         placeholder={placeholder}

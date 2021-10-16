@@ -8,4 +8,12 @@
   border: none;
   border-radius: 8px;
   outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 80%;
+  padding: 2rem;
 }

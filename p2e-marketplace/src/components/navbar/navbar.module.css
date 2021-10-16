@@ -27,4 +27,6 @@
   font-family: EuclidCircular, Arial;
   font-weight: 400;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
 }

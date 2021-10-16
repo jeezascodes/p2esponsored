@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './staticModal.module.css';
 import TextInput from '../../components/textInput/textInput';
 import PrimaryButton from '../../components/button/button';
+import { registerUser } from '../../data/apiCalls';
 
 export default function StaticModal() {
   const [name, setName] = useState('');
@@ -16,9 +17,21 @@ export default function StaticModal() {
     if (id === 'confirm') setConfirmPassword(event.target.value);
   };
 
-  const onSubmit = () => {
-    console.log('submit');
+  const onSubmit = async () => {
+    const data = {
+      username: name,
+      email,
+      password1: password,
+      password2: confirmPassword,
+    };
+    try {
+      const response = await registerUser(data);
+      console.log(`response`, response);
+    } catch (err) {
+      console.log(`err`, err);
+    }
   };
+
   return (
     <div className={styles.modalContainer}>
       <div className={styles.form}>

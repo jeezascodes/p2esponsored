@@ -21,7 +21,7 @@
 .row {
   flex-direction: row;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .thumbnailContainer {
@@ -36,8 +36,8 @@
   object-fit: cover;
   border-radius: 19px;
   overflow: hidden;
-  width: 189px;
-  height: 189px;
+  width: 159px;
+  height: 159px;
 }
 
 .thumbnailBg {
@@ -69,10 +69,83 @@
   margin: 0px;
   min-width: 0px;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: end;
-  justify-content: flex-end;
+  justify-content: space-around;
   padding-left: 1rem;
   flex: 3 1 0%;
+}
+
+.infoContainer {
+  box-sizing: border-box;
+  margin: 0px;
+  min-width: 0px;
+  flex: 1 1 0%;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 18px;
+}
+
+.username {
+  box-sizing: border-box;
+  margin: 0px;
+  min-width: 0px;
+  display: flex;
+  gap: 4px;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+}
+
+.gamename {
+  font-weight: 800;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 1);
+}
+
+.description {
+  max-width: 549px;
+  color: rgba(255, 255, 255, 0.88);
+  margin-right: 32px;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+}
+
+.date {
+  box-sizing: border-box;
+  margin: 0px;
+  min-width: 0px;
+  max-width: 549px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 20px;
+}
+
+.infoTitle {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+  color: rgba(255, 255, 255, 0.64);
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.infoText {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  line-height: 12px;
+  color: white;
 }

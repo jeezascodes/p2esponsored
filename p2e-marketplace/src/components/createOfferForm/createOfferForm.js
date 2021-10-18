@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './createOfferForm.module.css';
 import TextInput from '../../components/textInput/textInput';
 import SelectInput from '../../components/selectInput/selectInput';
@@ -17,6 +17,7 @@ export default function CreateOfferForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [paymentType, setPaymentType] = useState('Crypto');
   const [placesAvailable, setPlacesAvailable] = useState(0);
+
   const history = useHistory();
 
   const onValueChange = (event, id) => {
@@ -25,6 +26,8 @@ export default function CreateOfferForm() {
     if (id === 'expectations') setExpectations(event.target.value);
     if (id === 'places') setPlacesAvailable(event.target.value);
   };
+
+  const reg = new RegExp('^[0-9]+$');
 
   const gemeOptions = [
     { value: 'Axie infinity', label: 'Axie infinity' },
@@ -92,6 +95,9 @@ export default function CreateOfferForm() {
         onChange={onValueChange}
         type='text'
       />
+      {!reg.test(percentage) && (
+        <p className={styles.errorMessage}>This field should only be numbers</p>
+      )}
       <TextInput
         name='Monthly Earnings expections for the scholar (in USD)'
         placeholder='200'
@@ -100,6 +106,9 @@ export default function CreateOfferForm() {
         onChange={onValueChange}
         type='text'
       />
+      {!reg.test(expectations) && (
+        <p className={styles.errorMessage}>This field should only be numbers</p>
+      )}
       <SelectInput
         name='Payment type'
         value={paymentType}
@@ -114,11 +123,22 @@ export default function CreateOfferForm() {
         onChange={onValueChange}
         type='text'
       />
+      {!reg.test(placesAvailable) && (
+        <p className={styles.errorMessage}>This field should only be numbers</p>
+      )}
       <div className={styles.submit}>
         {isLoading ? (
           <Loader type='Puff' color='#00BFFF' height={50} width={50} />
         ) : (
-          <PrimaryButton title='Publish scholarship' onClick={onSubmit} />
+          <PrimaryButton
+            disabled={
+              !reg.test(percentage) ||
+              !reg.test(expectations) ||
+              !reg.test(placesAvailable)
+            }
+            title='Publish scholarship'
+            onClick={onSubmit}
+          />
         )}
       </div>
     </div>

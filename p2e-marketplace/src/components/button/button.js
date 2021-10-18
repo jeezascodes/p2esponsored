@@ -4,12 +4,15 @@ import styles from './button.module.css';
 export default function PrimaryButton({
   title = 'Get a Scholarships',
   onClick = () => {},
+  disabled = false,
 }) {
+  console.log(`disabled`, disabled);
   return (
     <button
       variant='primaryPurple'
       className={styles.primaryButton}
       onClick={() => onClick()}
+      disabled={disabled}
     >
       <div className={styles.buttonBg}></div>
       <div className='hook-left'>

@@ -21,11 +21,15 @@ export const getOffers = (limit, offset) => {
   });
 };
 
-console.log(`urls.getOffers`, urls.getOffers);
-
 export const createOffer = (data) => {
   return fetch(urls.createOffer, {
     method: 'POST',
     body: data,
+  });
+};
+
+export const getAllGames = () => {
+  return fetch(urls.getGames, {
+    method: 'GET',
   });
 };

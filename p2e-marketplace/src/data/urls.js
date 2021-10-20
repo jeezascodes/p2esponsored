@@ -9,3 +9,5 @@ export const getOffers = (limit = 100, offset = 0) => {
 };
 
 export const createOffer = `${BASE_API}market/offer/`;
+
+export const getGames = `${BASE_API}gaming/game/?limit=-100&offset=0`;

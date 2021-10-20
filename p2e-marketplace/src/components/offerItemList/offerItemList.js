@@ -22,7 +22,7 @@ export default function OfferItemList({
             <div className={styles.middle}>
               <div className={styles.infoContainer}>
                 <p className={styles.username}>{item.username}</p>
-                <p className={styles.gamename}>{item.game}</p>
+                <p className={styles.gamename}>{item.game_name}</p>
                 <p className={styles.description}>{item.description}</p>
                 <p className={styles.date}>updated at: {item.updated_at}</p>
               </div>

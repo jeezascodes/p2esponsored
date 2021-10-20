@@ -5,10 +5,11 @@ import MainView from '../../components/mainView/mainView';
 import Heading from '../../components/heading/heading';
 import PrimaryButton from '../../components/button/button';
 import { useHistory } from 'react-router-dom';
-import { getOffers } from '../../data/apiCalls';
+import { getOffers, getAllGames } from '../../data/apiCalls';
 
 export default function Offers() {
   const [offers, setOffers] = useState([]);
+  const [gameList, setGameList] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -16,6 +17,8 @@ export default function Offers() {
       try {
         const response = await getOffers(100, 0);
         setOffers(response.results);
+        const games = await getAllGames();
+        setGameList(games.results);
       } catch (err) {
         console.log(`err`, err);
       }
@@ -24,7 +27,17 @@ export default function Offers() {
     return () => {};
   }, []);
 
-  // const offers = [
+  const mapGamesToOffers = () => {
+    offers?.map((item) => {
+      let game = gameList?.filer((game) => game.pk === item.game);
+      let offerGameData = { ...item };
+      offerGameData.thumbnail = game.thumbnail;
+      offerGameData.game_name = game.name;
+      return offerGameData;
+    });
+  };
+
+  // const placeholderOffers = [
   //   {
   //     username: 'jeezascodes - 0x6F5...c622',
   //     offer_id: 1,
@@ -68,7 +81,7 @@ export default function Offers() {
         </div>
 
         <div className={styles.relative}>
-          {offers?.map((item) => {
+          {mapGamesToOffers()?.map((item) => {
             return <OfferItemList item={item} />;
           })}
         </div>

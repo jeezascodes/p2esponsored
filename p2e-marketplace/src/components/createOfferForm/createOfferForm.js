@@ -4,19 +4,33 @@ import TextInput from '../../components/textInput/textInput';
 import SelectInput from '../../components/selectInput/selectInput';
 import PrimaryButton from '../../components/button/button';
 import Heading from '../../components/heading/heading';
-import { createOffer } from '../../data/apiCalls';
+import { createOffer, getAllGames } from '../../data/apiCalls';
 import { useHistory } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 
 export default function CreateOfferForm() {
   const [game, setGame] = useState('');
+  const [gameList, setGameList] = useState([]);
   const [otherGame, setOtherGame] = useState('');
   const [percentage, setPercentage] = useState(10);
   const [duration, setDuration] = useState(1);
   const [expectations, setExpectations] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const [paymentType, setPaymentType] = useState('Crypto');
+  const [paymentType, setPaymentType] = useState('CRYPTO');
   const [placesAvailable, setPlacesAvailable] = useState(0);
+
+  useEffect(() => {
+    async function fetchGames() {
+      try {
+        const allGames = await getAllGames();
+        setGameList(allGames.results);
+      } catch (err) {
+        console.log(`err`, err);
+      }
+    }
+    fetchGames();
+    return () => {};
+  }, []);
 
   const history = useHistory();
 
@@ -29,13 +43,9 @@ export default function CreateOfferForm() {
 
   const reg = new RegExp('^[0-9]+$');
 
-  const gemeOptions = [
-    { value: 'Axie infinity', label: 'Axie infinity' },
-    { value: 'Zed run', label: 'Zed run' },
-    { value: 'Binamon', label: 'Binamon' },
-    { value: 'Plant vs Undead', label: 'Plant vs Undead' },
-    { value: 'Other', label: 'Other' },
-  ];
+  const gameOptions = gameList?.map((item) => {
+    return { value: item.pk, label: item.name };
+  });
 
   const options = [
     { value: 'undefined', label: 'undefined duration' },
@@ -85,7 +95,7 @@ export default function CreateOfferForm() {
       <SelectInput
         name='Game'
         value={game}
-        options={gemeOptions}
+        options={gameOptions}
         onChange={setGame}
       />
       {game.label === 'Other' && (

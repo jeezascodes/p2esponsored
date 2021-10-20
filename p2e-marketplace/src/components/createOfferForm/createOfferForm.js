@@ -4,7 +4,7 @@ import TextInput from '../../components/textInput/textInput';
 import SelectInput from '../../components/selectInput/selectInput';
 import PrimaryButton from '../../components/button/button';
 import Heading from '../../components/heading/heading';
-import { loginUser } from '../../data/apiCalls';
+import { createOffer } from '../../data/apiCalls';
 import { useHistory } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 
@@ -54,12 +54,29 @@ export default function CreateOfferForm() {
   ];
 
   const paymentOptions = [
-    { value: 'Crypto', label: 'Crypto' },
-    { value: 'Fiat', label: 'Fiat' },
+    { value: 'CRYPTO', label: 'Crypto' },
+    { value: 'FIAT', label: 'Fiat' },
   ];
 
   const onSubmit = async () => {
+    let data = {
+      game: 36307340,
+      duration: duration.value,
+      percentage,
+      payment_currency_type: paymentType.value,
+      payment_method: 'DEFAULT',
+      active: true,
+      quota: placesAvailable ? placesAvailable : 0,
+    };
     setIsLoading(true);
+    try {
+      const response = await createOffer(data);
+      setIsLoading(false);
+      history.push('/offers');
+    } catch (err) {
+      setIsLoading(false);
+      console.log(`err`, err);
+    }
   };
 
   return (

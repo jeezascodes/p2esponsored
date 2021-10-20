@@ -14,3 +14,18 @@ export const loginUser = (data) => {
     body: data,
   });
 };
+
+export const getOffers = (limit, offset) => {
+  return fetch(urls.getOffers(limit, offset), {
+    method: 'GET',
+  });
+};
+
+console.log(`urls.getOffers`, urls.getOffers);
+
+export const createOffer = (data) => {
+  return fetch(urls.createOffer, {
+    method: 'POST',
+    body: data,
+  });
+};

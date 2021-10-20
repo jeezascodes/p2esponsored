@@ -6,7 +6,6 @@ export default function PrimaryButton({
   onClick = () => {},
   disabled = false,
 }) {
-  console.log(`disabled`, disabled);
   return (
     <button
       variant='primaryPurple'

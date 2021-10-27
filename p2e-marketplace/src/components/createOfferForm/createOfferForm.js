@@ -70,17 +70,17 @@ export default function CreateOfferForm() {
 
   const onSubmit = async () => {
     let data = {
-      game: 36307340,
+      game: 1,
       duration: duration.value,
       percentage,
       payment_currency_type: paymentType.value,
-      payment_method: 'DEFAULT',
+      payment_method: 'CRYPTO',
       active: true,
       quota: placesAvailable ? placesAvailable : 0,
     };
     setIsLoading(true);
     try {
-      const response = await createOffer(data);
+      await createOffer(data);
       setIsLoading(false);
       history.push('/offers');
     } catch (err) {

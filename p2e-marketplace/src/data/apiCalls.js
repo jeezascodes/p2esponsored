@@ -33,3 +33,17 @@ export const getAllGames = () => {
     method: 'GET',
   });
 };
+
+export const getNewToken = (data) => {
+  return fetch(urls.getNewToken, {
+    method: 'POST',
+    body: data,
+  });
+};
+
+export const verifyToken = (data) => {
+  return fetch(urls.verifyToken, {
+    method: 'POST',
+    body: data,
+  });
+};

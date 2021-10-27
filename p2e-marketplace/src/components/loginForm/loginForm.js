@@ -20,6 +20,8 @@ export default function LoginForm() {
   };
 
   const onSubmit = async () => {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
     setIsLoading(true);
     const data = {
       username: name,
@@ -28,6 +30,8 @@ export default function LoginForm() {
     };
     try {
       const response = await loginUser(data);
+      localStorage.setItem('access_token', response.access_token || '');
+      localStorage.setItem('refresh_token', response.refresh_token || '');
       setIsLoading(false);
       history.push('/offers');
     } catch (err) {

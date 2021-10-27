@@ -1,5 +1,4 @@
-// Utils
-// import Store from '../utils/store';
+import { refreshToken } from '../utils/refreshHelper';
 
 const fetchHelper = async (url, options = {}) => {
   const fetchOptions = {
@@ -10,6 +9,11 @@ const fetchHelper = async (url, options = {}) => {
     ...options,
   };
 
+  let token = await localStorage.getItem('access_token');
+  if (token) {
+    fetchOptions.headers.Authorization = `Bearer ${token}`;
+  }
+
   if (fetchOptions.method !== 'GET' && fetchOptions.body) {
     fetchOptions.headers['Content-Type'] = 'application/json';
     fetchOptions.body = JSON.stringify(fetchOptions.body);
@@ -18,6 +22,7 @@ const fetchHelper = async (url, options = {}) => {
   return fetch(url, fetchOptions).then((response) => {
     if (response.status >= 400) {
       let error = 'generic error';
+
       return new Promise((resolve, reject) => {
         response
           .json()

@@ -4,6 +4,10 @@ export const register = `${BASE_API}auth/register/`;
 
 export const login = `${BASE_API}auth/login/`;
 
+export const verifyToken = `${BASE_API}auth/token/verify/`;
+
+export const getNewToken = `${BASE_API}auth/token/refresh/`;
+
 export const getOffers = (limit = 100, offset = 0) => {
   return `${BASE_API}market/offer/?limit=${limit}&offset=${offset}`;
 };

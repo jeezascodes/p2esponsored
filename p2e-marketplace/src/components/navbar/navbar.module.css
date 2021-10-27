@@ -25,8 +25,13 @@
 .navbarLink {
   margin-left: 20px;
   font-family: EuclidCircular, Arial;
-  font-weight: 400;
+  font-weight: 800;
   cursor: pointer;
   color: white;
   text-decoration: none;
+}
+
+.logo {
+  max-width: 8rem;
+  margin-left: -20px;
 }

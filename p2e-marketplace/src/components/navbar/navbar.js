@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './navbar.module.css';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/bencer_logo.png';
 
 export default function Navbar() {
   return (
@@ -8,7 +9,7 @@ export default function Navbar() {
       <div className={styles.navbarWrapper}>
         <div>
           <Link to='/' className={styles.navbarLink}>
-            this is a logo
+            <img src={logo} className={styles.logo} />
           </Link>
         </div>
         <div>

@@ -23,6 +23,15 @@ const fetchHelper = async (url, options = {}) => {
     if (response.status >= 400) {
       let error = 'generic error';
 
+      if (response.status === 401) {
+        error = 'invalid_token';
+        async function refresher() {
+          await refreshToken();
+          window.location.reload();
+        }
+        refresher();
+      }
+
       return new Promise((resolve, reject) => {
         response
           .json()

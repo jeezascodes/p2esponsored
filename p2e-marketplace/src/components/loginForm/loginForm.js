@@ -5,6 +5,7 @@ import PrimaryButton from '../../components/button/button';
 import { loginUser } from '../../data/apiCalls';
 import { useHistory } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
+import Heading from '../../components/heading/heading';
 
 export default function LoginForm() {
   const [name, setName] = useState('');
@@ -42,6 +43,7 @@ export default function LoginForm() {
 
   return (
     <div className={styles.form}>
+      <Heading text='Sign in' herarchy='h3' />
       <TextInput
         placeholder='username'
         value={name}

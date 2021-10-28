@@ -26,7 +26,7 @@ const fetchHelper = async (url, options = {}) => {
       if (response.status === 401) {
         error = 'invalid_token';
         async function refresher() {
-          await refreshToken();
+          await refreshToken(true);
           window.location.reload();
         }
         refresher();

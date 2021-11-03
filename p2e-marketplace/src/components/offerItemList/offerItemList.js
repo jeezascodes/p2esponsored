@@ -24,7 +24,7 @@ export default function OfferItemList({
                 <p className={styles.username}>{item.username}</p>
                 <p className={styles.gamename}>{item.game_name}</p>
                 <p className={styles.description}>{item.description}</p>
-                <p className={styles.date}>updated at: {item.updated_at}</p>
+                {/* <p className={styles.date}>updated at: {item.updated_at}</p> */}
               </div>
             </div>
             <div className={styles.right}>

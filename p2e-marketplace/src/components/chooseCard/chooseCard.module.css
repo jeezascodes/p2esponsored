@@ -1,0 +1,76 @@
+.cardWrapper {
+  width: 25rem;
+  height: 25rem;
+  backdrop-filter: opacity(0.8);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  cursor: unset;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.cardWrapper:hover {
+  transform: scale(1.125);
+  transform-origin: center center;
+  box-shadow: rgb(0 0 0 / 40%) 0px 18px 24px 0px;
+  transition: all 0.2s cubic-bezier(0.64, 0.04, 0.35, 1) 0s;
+}
+
+.thumbnailContainer {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex: 1 1 0%;
+  position: static;
+}
+
+.thumbnail {
+  width: inherit;
+  display: block;
+  height: 15rem;
+  object-fit: cover;
+  mix-blend-mode: revert;
+  border-radius: 8px;
+  mask-image: radial-gradient(
+    ellipse 55% 76% at 50% 61%,
+    black 24%,
+    transparent 69%
+  );
+}
+
+.thumbnail_as_bg {
+  width: 232px;
+  height: 232px;
+  position: absolute;
+  /* background-image: url(https://api.thegraph.com/ipfs/api/v0/cat?arg=QmP4AbpQXQH2gJeEY1KCtjUBnroiEksWBHH9A9zMBgrdZ8); */
+  background-size: 250%;
+  background-position: center center;
+  filter: blur(60px);
+  z-index: -1;
+  display: block;
+  opacity: 0.6;
+  top: 10px;
+}
+
+.textContainer {
+  box-sizing: border-box;
+  margin: 0px;
+  min-width: 0px;
+  display: flex;
+  text-align: center;
+  font-size: 10px;
+  position: relative;
+  top: -8px;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}

@@ -32,6 +32,8 @@ export default function CreateOfferForm() {
     return () => {};
   }, []);
 
+  console.log(`game`, game);
+
   const history = useHistory();
 
   const onValueChange = (event, id) => {
@@ -70,7 +72,7 @@ export default function CreateOfferForm() {
 
   const onSubmit = async () => {
     let data = {
-      game: 1,
+      game: game.value,
       duration: duration.value,
       percentage,
       payment_currency_type: paymentType.value,

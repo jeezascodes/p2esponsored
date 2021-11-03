@@ -5,6 +5,7 @@ import Register from './pages/register/register';
 import Offers from './pages/offers/offers';
 import OfferDetail from './pages/offerDetail/offerDetail';
 import CreateOffer from './pages/createOffer/createOffer';
+import CreateProfile from './pages/createProfile/createProfile';
 import Login from './pages/login/login';
 import Navbar from './components/navbar/navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route exact path='/create'>
             <CreateOffer />
+          </Route>
+          <Route exact path='/profile'>
+            <CreateProfile />
           </Route>
         </Switch>
       </BrowserRouter>

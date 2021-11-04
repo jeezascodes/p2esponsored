@@ -4,3 +4,33 @@
   align-items: center;
   justify-content: space-evenly;
 }
+
+.modalContainer {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #1c152e;
+  opacity: 0.8;
+  -webkit-transition: all 0.5s 0s ease;
+  -moz-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+  transition: all 0.5s 0s ease;
+  z-index: 2;
+}
+
+.modalWrapper {
+  z-index: 3;
+  margin-top: 10rem;
+}

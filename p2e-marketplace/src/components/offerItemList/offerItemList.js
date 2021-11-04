@@ -7,6 +7,7 @@ export default function OfferItemList({
   item = { image: '' },
   detail = false,
 }) {
+  console.log(`item`, item);
   return (
     <div>
       <Link
@@ -34,11 +35,11 @@ export default function OfferItemList({
               </div>
               <div>
                 <p className={styles.infoTitle}>Percentage for scholar</p>
-                <p className={styles.infoText}>50%</p>
+                <p className={styles.infoText}>{item.percentage}%</p>
               </div>
               <div>
                 <p className={styles.infoTitle}>Places left</p>
-                <p className={styles.infoText}>5</p>
+                <p className={styles.infoText}>{item.quota}</p>
               </div>
             </div>
           </div>

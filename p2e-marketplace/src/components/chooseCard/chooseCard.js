@@ -4,9 +4,9 @@ import PrimaryButton from '../../components/button/button';
 import Heading from '../../components/heading/heading';
 import { Link } from 'react-router-dom';
 
-export default function ChooseCard({ data }) {
+export default function ChooseCard({ data, onClick }) {
   return (
-    <div>
+    <div onClick={onClick}>
       <div className={styles.cardWrapper}>
         <div className={styles.thumbnailContainer}>
           <video className={styles.thumbnail} autoPlay loop muted>

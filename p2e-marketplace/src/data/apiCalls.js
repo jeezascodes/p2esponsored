@@ -8,6 +8,13 @@ export const registerUser = (data) => {
   });
 };
 
+export const createProfile = (data) => {
+  return fetch(urls.profile, {
+    method: 'POST',
+    body: data,
+  });
+};
+
 export const loginUser = (data) => {
   return fetch(urls.login, {
     method: 'POST',

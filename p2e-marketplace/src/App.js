@@ -45,6 +45,12 @@ function App() {
           <Route exact path='/profile'>
             <CreateProfile />
           </Route>
+          <Route exact path='/scholar_profile'>
+            <Login />
+          </Route>
+          <Route exact path='/sponsor_profile'>
+            <Login />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
